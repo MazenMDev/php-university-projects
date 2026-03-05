@@ -31,6 +31,10 @@
     return ROUTES_DIR . "/" . normalizeURI($uri) ."_". strtolower($method) . ".php";
   }
 
+  function redirect(string $uri): void {
+    header("Location: /" . normalizeURI($uri));
+    exit;
+  }
   function dispatch (string $uri, string $method): void {
     // 1- noramlize uri: Get /guestbook -> routes/guestbook.php
     $uri = normalizeURI(uri: $uri);
@@ -49,8 +53,6 @@
     notFound();
     // 4- check if file exists, if not return 404
     // 5- handle the route by including the php file
-
-
   }
 
 ?>

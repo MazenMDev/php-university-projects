@@ -16,6 +16,8 @@
     <div class="container">
       <a href="./">Home</a>
       <a href="/contact">Contact</a>
+      <a href="/guestbook">Guestbook</a>
     </div>
   </nav>
   <main class="container">
+    <?php require_once('_flash.php'); ?>

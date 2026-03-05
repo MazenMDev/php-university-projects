@@ -108,9 +108,9 @@ select {
   width: 100%;
 }
 
-textarea{
+textarea {
   resize: vertical;
-  min-height: 120px;  
+  min-height: 120px;
 }
 
 input:focus,
@@ -193,6 +193,45 @@ main.container {
   font-size: 0.9rem;
   color: #6b7280;
   font-weight: 500;
+}
+
+.flash-message {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.flash-messages {
+  margin-bottom: 1.25rem;
+}
+
+.flash-messages .flash-message:last-child {
+  margin-bottom: 0;
+}
+
+.flash-success {
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+}
+
+.flash-error {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+}
+
+.flash-warning {
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+}
+
+.flash-info {
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
 }
 
 @media (max-width: 640px) {
