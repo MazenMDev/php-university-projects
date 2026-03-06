@@ -1,5 +1,10 @@
 <?php
 
+  if(!validateCSRFToken($_POST['csrf_token'] ?? null)) {
+    addFlashMessage('error', 'Invalid CSRF token. Please try again.');
+    redirect('contact');
+  }
+
   $name = $_POST["name"] ?? '';
   $email = $_POST["email"] ?? '';
   $message = $_POST['message'] ??'';
