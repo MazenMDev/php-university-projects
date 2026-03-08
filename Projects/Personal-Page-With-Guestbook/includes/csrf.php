@@ -8,14 +8,14 @@ function generateCSRFToken(): string {
   $token = bin2hex(random_bytes(CSRF_TOKEN_LENGTH));
   setCSRFTokenAndTime($token);
   return $token;
-  }
-  
+}
+
 function setCSRFTokenAndTime(?string $token): void {
   if($token === null){
     unset(
       $_SESSION['csrf_token'],
       $_SESSION['csrf_token_time']
-    );
+    ); 
     return;
   }
   $_SESSION['csrf_token'] = $token;

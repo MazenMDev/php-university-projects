@@ -4,7 +4,7 @@
   const INDEX_URI = '';
   const INDEX_ROUTE = 'index';
   function normalizeURI (string $uri): string {
-    $uri = parse_url($uri, PHP_URL_PATH) ?? '';
+    $uri = parse_url($uri, PHP_URL_PATH) ?? ''; 
     $uri = strtolower(trim($uri, "/"));
     return $uri === INDEX_URI ? INDEX_ROUTE : $uri; 
   }
@@ -36,23 +36,18 @@
     exit;
   }
   function dispatch (string $uri, string $method): void {
-    // 1- noramlize uri: Get /guestbook -> routes/guestbook.php
-    $uri = normalizeURI(uri: $uri);
+    $uri = normalizeURI($uri);
     $method = strtoupper($method);
-    // var_dump($uri); die;
-    // 2- GET|POST - return 404
     if (!in_array($method, ALLOWED_METHOD)){
       notFound();
     }
-    // 3- file path - php file path
+
     $filePath = getFilePath($uri, $method);
     if (file_exists($filePath)){
-      include ($filePath);
+      include ($filePath); 
       return;
     }
     notFound();
-    // 4- check if file exists, if not return 404
-    // 5- handle the route by including the php file
   }
 
 ?>
