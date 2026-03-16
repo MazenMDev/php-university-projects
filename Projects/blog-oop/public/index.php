@@ -2,7 +2,6 @@
   declare(strict_types= 1);
 
   require_once __DIR__  . "/../bootstrap.php";
-  var_dump($config);die;
   use Core\Router;
 
   $router = new Router();
