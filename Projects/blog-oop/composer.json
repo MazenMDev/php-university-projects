@@ -1,0 +1,16 @@
+{
+    "name": "mazen/blog-oop",
+    "authors": [
+        {
+            "name": "MazenMDev",
+            "email": "mazen.m.mahmoud0@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/",
+            "Core\\": "core/"
+        }
+    },
+    "require": {}
+}
