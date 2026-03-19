@@ -2,7 +2,7 @@
   use Core\App;
   require_once __DIR__ . "/../bootstrap.php";
 
-  $database = App::get("database");
+  $database = App::get("database"); 
 
   $schemaFile = __DIR__ . "/../database/schema.sql";
   if (!file_exists($schemaFile)) {
@@ -18,7 +18,6 @@
         if ($statement === "") {
           continue;
         }
-
         $database->query($statement);
       }
 
